@@ -158,3 +158,66 @@ const repeatText = (text, repeat = 2) => {
 repeatText("Testando");
 
 repeatText("Repetindo 6 vezes", 6)
+
+
+// 9 - closure
+
+function someFunction() {
+    let txt = "Alguma coisa";
+
+    function display() {
+        console.log(txt);
+    }
+
+    display();
+}
+
+someFunction();
+
+// 10 - mais sobre closure
+const multiplicationClosure = (n) => {
+    return (m) => {
+        return n * m;
+    };
+};
+
+const c1 = multiplicationClosure(5);
+
+const c2 = multiplicationClosure(10);
+
+console.log(c1);
+
+console.log(c2);
+
+console.log(c1(5));
+
+console.log(c2(10));
+
+// 11 - recursion
+const unitilTen = (n, m) => {
+    if(n < 10) {
+        console.log("A função parou de executar!")
+    }else{
+        const x = n - m
+
+        console.log(x)
+
+        unitilTen(x, m)
+    }
+}
+
+unitilTen(100, 7);
+
+function factorial(x) {
+    if(x === 0) {
+        return 1
+    } else {
+        return x * factorial(x - 1)
+    }
+}
+
+const num = 6 
+
+const result = factorial(num)
+
+console.log(`O fatorial do número ${num} é ${result}`)
